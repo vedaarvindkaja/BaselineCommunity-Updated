@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <fieldSets>
+        <fullName>RC_CandidateExpenseReports</fullName>
+        <description>Expense report fields for candidate</description>
+        <displayedFields>
+            <field>TR1__Account_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Expense_Period_Start__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Expense_Period_End__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>RC_CandidateExpenseReports</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RC_Client_expense_report_detail</fullName>
+        <description>Used in ClientExpenseReport Page</description>
+        <displayedFields>
+            <field>TR1__Total_Lodging__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Total_Client_Gift__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Total_Meals_Entertainment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Non_Mileage_Total__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Total_Other__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Client expense report detail</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RC_Approve_Reject_Exp_Report</fullName>
+        <description>Used in ApproveOrRejectTimesheet</description>
+        <displayedFields>
+            <field>TR1__Total_Meals_Entertainment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Total_Lodging__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Total_Mileage__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Total_Other__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Approve Reject Exp Report</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RC_CandidateExpRepEdit</fullName>
+        <description>Used at Detail page of Exp Rep</description>
+        <displayedFields>
+            <field>TR1__Expense_Period_Start__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Expense_Period_End__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Closing_Report__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>RC_CandidateExpRepEdit</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RC_Client_Expense_report</fullName>
+        <description>Used in ClientExpenseReport Page</description>
+        <displayedFields>
+            <field>TR1__Consultant_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Account_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Expense_Period_Start__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Expense_Period_End__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Expense_Report_Total__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Client Expense report</label>
+    </fieldSets>
+    <validationRules>
+        <fullName>Date_Comparision_for_Start_and_End_Date</fullName>
+        <active>true</active>
+        <description>Start date should not be less then End date</description>
+        <errorConditionFormula>TR1__Expense_Period_End__c &lt; TR1__Expense_Period_Start__c</errorConditionFormula>
+        <errorMessage>Expense Period End Date should be greater then Expense Period Start Date</errorMessage>
+    </validationRules>
+
+    <fields>
+        <fullName>All_Approver__c</fullName>
+        <externalId>false</externalId>
+        <formula>TR1__Closing_Report__r.TR1__Timesheet_Approver__c+&apos;;&apos; 
++TR1__Closing_Report__r.Timesheet_Third_Approver__c+&apos;;&apos; 
++TR1__Closing_Report__r.TR1__Timesheet_Second_Approver__c+&apos;;&apos; 
++TR1__Closing_Report__r.Timesheet_Fourth_Approver__c+&apos;;&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>All Approver</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approver_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Approver Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Expense Reports (Approver Contact)</relationshipLabel>
+        <relationshipName>Expense_Reports</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+</CustomObject>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+  <labels>
+    <fullName>BackUrlInCommunity_ShiftworkPage</fullName>
+    <language>en_US</language>
+    <protected>false</protected>
+    <shortDescription>BackUrlInCommunity(ShiftworkPage)</shortDescription>
+    <value>https://dev2-questgroup-dev.cs91.force.com</value>
+  </labels>
+  <labels>
+    <fullName>DefaultExpenseLineItemRecordType</fullName>
+    <language>en_US</language>
+    <protected>false</protected>
+    <shortDescription>DefaultExpenseLineItemRecordType</shortDescription>
+    <value>Other</value>
+  </labels>
+    <labels>
+        <fullName>Candidate_Registration_Duplicate_Mail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Candidate Registration Duplicate Mail</shortDescription>
+        <value>A Primary Contact already exists with this email address.Please select a new email address, or email the Admin to troubleshoot.</value>
+    </labels>
+    <labels>
+        <fullName>For_Applying</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>For Applying</shortDescription>
+        <value>View</value>
+    </labels>
+    <labels>
+        <fullName>JobAlreadyApplied</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JobAlreadyApplied</shortDescription>
+        <value>Application already submitted for this Job</value>
+    </labels>
+    <labels>
+        <fullName>RC_TimesheetApproveReject_Insufficient_Params</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>This custom settings is used to display insufficient parameter message</shortDescription>
+        <value>Insufficient parameters in URL</value>
+    </labels>
+    <labels>
+        <fullName>upload_resume_to_apply_for_job</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>upload resume to apply for job</shortDescription>
+        <value>To apply on jobs, you need to upload a resume</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>DocuSign_Template_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>TR1__Qualification__r.TR1__Docusign_Template_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DocuSign Template ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Power_Form_URL__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( 
+
+&quot;https://www.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=&quot;&amp;DocuSign_Template_ID__c 
+&amp;&quot;&amp;EnvelopeField_AQID=&quot;&amp; Id 
+&amp;&quot;&amp;Candidate_UserName=&quot;&amp; TR1__Contact__r.FirstName &amp; &quot;%20&quot; &amp; TR1__Contact__r.LastName 
+&amp;&quot;&amp;Candidate_Email=&quot;&amp; TR1__Contact__r.Email 
+&amp;&quot;&amp;CredentialCandidateName=&quot;&amp; TR1__Contact__r.FirstName &amp; &quot;%20&quot; &amp; TR1__Contact__r.LastName 
+&amp;&quot;&amp;TMAQCandidateBirthDay=&quot;&amp; TEXT(TR1__Contact__r.Birth_Day__c) 
+&amp;&quot;&amp;TMAQCandidateBirthMonth=&quot;&amp; TEXT(TR1__Contact__r.Birth_Month__c)
+&amp;&quot;&amp;TMAQCandidateCity=&quot;&amp; TR1__Contact__r.OtherCity 
+&amp;&quot;&amp;TMAQCandidateDesiredHourly=&quot;&amp; TEXT(TR1__Contact__r.TR1__Desired_Hourly__c)
+&amp;&quot;&amp;TMAQCandidateDesiredSalary=&quot;&amp; TEXT(TR1__Contact__r.TR1__Desired_Salary__c) 
+&amp;&quot;&amp;TMAQCandidateEmail=&quot;&amp; TR1__Contact__r.Email
+&amp;&quot;&amp;TMAQCandidateFirstName=&quot;&amp; TR1__Contact__r.FirstName
+&amp;&quot;&amp;TMAQCandidateHomePhone=&quot;&amp;  TR1__Contact__r.HomePhone 
+&amp;&quot;&amp;TMAQCandidateLastName=&quot;&amp; TR1__Contact__r.LastName 
+&amp;&quot;&amp;TMAQCandidateMiddleInitial=&quot;&amp; TR1__Contact__r.Middle_Initial__c 
+&amp;&quot;&amp;TMAQCandidateName=&quot;&amp; TR1__Contact__r.FirstName &amp; &quot;%20&quot; &amp; TR1__Contact__r.LastName 
+&amp;&quot;&amp;TMAQCandidatePhone=&quot;&amp; TR1__Contact__r.Phone
+&amp;&quot;&amp;TMAQCandidateState=&quot;&amp; TR1__Contact__r.OtherState
+&amp;&quot;&amp;TMAQCandidateStreet=&quot;&amp; TR1__Contact__r.OtherStreet
+&amp;&quot;&amp;TMAQCandidateZip=&quot;&amp; TR1__Contact__r.OtherPostalCode
+
+, 
+
+
+&quot;Sign Here&quot;, &quot;_blank&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Power Form URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    
+    <fieldSets>
+        <fullName>DEFAULT_QUALIFICATIONS_FIELDS</fullName>
+        <description>Used in Community to present Default fields on MyQualificationDetailEdit Page</description>
+        <displayedFields>
+            <field>TR1__Issue_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Issued_Qualification_ID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Expiration_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>DEFAULT_QUALIFICATIONS_FIELDS</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RC_QualificationInfo</fullName>
+        <description>Used To display fields on MyQualificationList page</description>
+        <displayedFields>
+            <field>TR1__Qualification__r.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Expiration_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>RC_QualificationInfo</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Resume</fullName>
+        <description>For Testing</description>
+        <displayedFields>
+            <field>TR1__Expiration_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__External_ID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Resume</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Start_Cost_Forms</fullName>
+        <description>Qualification Edit Page</description>
+        <displayedFields>
+            <field>TR1__Issued_Qualification_ID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Expiration_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Issue_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Start/Cost Forms</label>
+    </fieldSets>
+</CustomObject>

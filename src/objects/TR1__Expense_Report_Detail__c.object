@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <fieldSets>
+        <fullName>Meals_Entertainment</fullName>
+        <description>CandidateExpenseLineItem</description>
+        <displayedFields>
+            <field>TR1__Miles__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Meals_Ent_Amount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Meals &amp; Entertainment</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Other</fullName>
+        <description>CandidateExpenseLineItem</description>
+        <displayedFields>
+            <field>TR1__Oth_Amount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Other</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Client_Gift</fullName>
+        <description>CandidateExpenseLineItem</description>
+        <displayedFields>
+            <field>TR1__Mileage_Amnt__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Client Gift</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ExpenseLineItemDetail</fullName>
+        <description>To be used at expense report detail</description>
+        <displayedFields>
+            <field>RecordTypeId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Vendor__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Amount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>ExpenseLineItemDetail</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Lodging</fullName>
+        <description>To show the fields which is related to Lodging record type</description>
+        <displayedFields>
+            <field>TR1__Lodging_Amnt__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Lodging</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Mileage</fullName>
+        <description>To show the fields which is related to Mileage record type</description>
+        <displayedFields>
+            <field>TR1__Miles__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Mileage_Rate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Mileage</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Transportation_Parking</fullName>
+        <description>CandidateExpenseLineItem</description>
+        <displayedFields>
+            <field>TR1__Other_Transport_Parking_Amount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Transportation &amp; Parking</label>
+    </fieldSets>
+
+    <validationRules>
+        <fullName>Date_Validation</fullName>
+        <active>true</active>
+        <description>Date should be Greater then or Equal to Expense Report Start date and Less then or equal to Expense Report End Date</description>
+        <errorConditionFormula>OR( 
+(TR1__Date__c &lt; TR1__Expense_Report__r.TR1__Expense_Period_Start__c), 
+(TR1__Date__c &gt; TR1__Expense_Report__r.TR1__Expense_Period_End__c))</errorConditionFormula>
+        <errorMessage>Line Item Date should be between Expense Report Start and End Date</errorMessage>
+    </validationRules>
+</CustomObject>

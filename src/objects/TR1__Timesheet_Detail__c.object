@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <fieldSets>
+        <fullName>RC_TimesheetDetail</fullName>
+        <description>Used in TimesheetDetail page at Main section</description>
+        <displayedFields>
+            <field>TR1__Regular_Hours__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Overtime_Hours__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Double_Time_Hours__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TR1__Vacation_Hours__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Total_Hours__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>RC_TimesheetDetail</label>
+    </fieldSets>
+    <validationRules>
+        <fullName>VacationHours</fullName>
+        <active>true</active>
+        <description>Vacation hours either should be 4 or 8</description>
+        <errorConditionFormula>TR1__Vacation_Hours__c &lt;&gt; 0.00 &amp;&amp; TR1__Vacation_Hours__c &lt;&gt; 4.00 &amp;&amp; TR1__Vacation_Hours__c &lt;&gt; 8.00</errorConditionFormula>
+        <errorMessage>Vacation hours either should be 4 or 8</errorMessage>
+    </validationRules>
+
+    <fields>
+        <fullName>Total_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>TR1__Regular_Hours__c + TR1__Overtime_Hours__c + TR1__Double_Time_Hours__c + TR1__Vacation_Hours__c + TR1__Sick_Time_Hours__c + TR1__Travel_Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

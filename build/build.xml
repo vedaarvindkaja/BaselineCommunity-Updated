@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Talent Rover" basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <!-- Build properties -->
+    <property name="src.dir" value="../src" />
+    <property environment="env" />
+    <property name="sf.pkgContents"
+        value="applications/*.*,
+              approvalProcesses/*.*,
+              classes/*.*,
+              components/*.*,
+              customApplicationComponents/*.*,
+              dashboards/*
+              dashboards/**/*.*,
+              documents/**/*.*,
+              email/**/*.*,
+              groups/*.*,
+              homePageComponents/*.*,
+              homePageLayouts/*.*,
+              labels/*.*,
+              layouts/*.*,
+              letterhead/*.*,
+              matchingRules/*.*,
+              networks/*.*,
+              objects/*.*,
+              pages/*.*,
+              queues/*.*,
+              package.xml
+              permissionsets/*.*,
+              profiles/*.*,
+              quickActions/*.*,
+              remoteSiteSettings/*.*,
+              reports/*,
+              reports/**/*.*,
+              reportTypes/*.*,
+              roles/*.*,
+              settings/*.*,
+              sharingRules/*.*,
+              siteDotComSites/*.*,
+              sites/*.*,
+              staticresources/*.*,
+              tabs/*.*,
+              triggers/*.*,
+              weblinks/*.*,
+              workflows/*.*" />
+
+    <!-- Build classpath -->
+    <path id="classpath">
+        <fileset dir="lib" />
+    </path>
+
+    <!-- Dev / CI deployment -->
+    <target name="deployWithoutTests">
+        <taskdef name="sfdeploy"
+            classname="com.claimvantage.force.ant.DeployWithXmlReportTask"
+            classpathref="classpath" />
+        <zip destfile="${src.dir}/batch.zip" basedir="${src.dir}"
+            includes="${sf.pkgContents}" />
+        <sfdeploy username="${env.jenkins_userName}" password="${env.jenkins_passWord}"
+            serverurl="${env.jenkins_serverUrl}" maxPoll="${env.jenkins_maxPoll}"
+            pollWaitMillis="300000" zipFile="${src.dir}/batch.zip"
+            runAllTests="false" checkOnly="${env.jenkins_checkOnly}"/>
+    </target>
+
+    <!-- QA / Prod deployment -->
+    <target name="deployWithTests">
+        <taskdef name="sfdeploy"
+            classname="com.claimvantage.force.ant.DeployWithXmlReportTask"
+            classpathref="classpath" />
+        <zip destfile="${src.dir}/batch.zip" basedir="${src.dir}"
+            includes="${sf.pkgContents}" />
+        <sfdeploy username="${env.jenkins_userName}" password="${env.jenkins_passWord}"
+            serverurl="${env.jenkins_serverUrl}" maxPoll="${env.jenkins_maxPoll}"
+            pollWaitMillis="300000" zipFile="${src.dir}/batch.zip"
+            testLevel="RunLocalTests" checkOnly="${env.jenkins_checkOnly}"/>
+    </target>
+
+    <!-- Destructive Deployment -->
+    <target name="destructiveDeployment">
+      <taskdef name="sfdeploy"
+          classname="com.claimvantage.force.ant.DeployWithXmlReportTask"
+          classpathref="classpath" />
+      <sfdeploy username="${env.jenkins_userName}" password="${env.jenkins_passWord}"
+          serverurl="${env.jenkins_serverUrl}" maxPoll="${env.jenkins_maxPoll}"
+          deployRoot="undeployCode" ignoreWarnings="true"/>
+    </target>
+</project>
